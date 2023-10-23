@@ -39,27 +39,27 @@ def is_rar(file):
     return os.path.splitext(file)[1] in rar
 
 # Change the current directory to the user's downloads folder
-os.chdir(r"C:\Users\Andy\Downloads")
+os.chdir(r"")
 
-# Loop through all the files in the downloads folder with a for loop
+# Loop through all the files in the folder with a for loop
 for file in os.listdir():
     # Use the defined functions to check if the file is an audio, video or image file
     if is_audio(file):
         # If it is an audio file, use the function shutil.move to move it to the audio folder in the user's desktop
-        shutil.move(file, os.path.join(r'C:\Users\Andy\Desktop\Directorio\Audios', file))
+        shutil.move(file, os.path.join(r'', file))
     elif is_video(file):
         # If it is a video file, do the same but with the video folder
-        shutil.move(file, os.path.join(r'C:\Users\Andy\Desktop\Directorio\Videos', file))
+        shutil.move(file, os.path.join(r'', file))
     elif is_image(file):
         # If it is an image file, do the same but with the images folder
-        shutil.move(file, os.path.join(r'C:\Users\Andy\Desktop\Directorio\Imagenes', file))
+        shutil.move(file, os.path.join(r'', file))
     elif is_rar(file):
         # If it is a compressed file, do the same but with the rar folder
-        shutil.move(file, os.path.join(r'C:\Users\Andy\Desktop\Directorio\rar', file))
+        shutil.move(file, os.path.join(r'', file))
     elif is_exe(file):
         # If it is an executable file, do the same but with the exe folder
-        shutil.move(file, os.path.join(r'C:\Users\Andy\Desktop\Directorio\exe', file))
+        shutil.move(file, os.path.join(r'', file))
     else:
         # If it is none of the previous types, move it to the unclassified folder
-        shutil.move(file, os.path.join(r'C:\Users\Andy\Desktop\Directorio\Indeterminado', file))
+        shutil.move(file, os.path.join(r'', file))
 
